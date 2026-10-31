@@ -356,7 +356,7 @@ function measure() { vw = innerWidth; vh = innerHeight; docMax = Math.max(1, doc
 /* ---------- 1. Vídeo em quadros (rolagem suave) ---------- */
 // 360 quadros (12 por segundo, 1280x720): os 240 primeiros em frames/d e os 120 finais em frames/m.
 const N = 360;
-const frameUrl = i => i < 240 ? `frames/d/f${String(i + 1).padStart(3, '0')}.webp` : `frames/m/f${String(i - 239).padStart(3, '0')}.webp`;
+const frameUrl = i => i < 240 ? `d/f${String(i + 1).padStart(3, '0')}.webp` : `frames/m/f${String(i - 239).padStart(3, '0')}.webp`;
 const seq = $('#seq'), sctx = seq.getContext('2d', { alpha: false });
 const frames = new Array(N).fill(null);
 let loadedN = 0, lastKey = '', lastC = -1, kwTick = 0, lastDir = 1;
